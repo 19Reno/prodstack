@@ -1,12 +1,26 @@
-# Never commit these
-*.tfstate
-*.tfstate.backup
+# --- Terraform ---
 .terraform/
-secrets/approle.env
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+
+# --- Docker & Binaries ---
+*.log
 **/*.key
 **/*.pem
-*.env
+.env
+secrets/
 
-# Keep these
-!.gitkeep
+# --- GitHub Actions Runner (The 900MB Monster) ---
 actions-runner/
+_diag/
+_work/
+
+# --- Python (if using app.py) ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
