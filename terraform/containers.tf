@@ -3,8 +3,8 @@ resource "docker_image" "app" {
 }
 
 resource "docker_container" "app" {
-  count = 3
-  name  = "tf-app-${count.index + 1}"
+  count = 1
+  name  = "tf-app"
   image = docker_image.app.image_id
 
   networks_advanced {

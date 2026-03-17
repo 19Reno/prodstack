@@ -1,0 +1,21 @@
+name: Simple-Prodstack-Deploy
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # This uses your Acer Ubuntu as the worker!
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build App Image
+        run: |
+          docker build -t prodstack-app:3.0.0 ./app
+
+      - name: Infrastructure Sync
+        run: |
+          cd terraform
+          terraform init
+          terraform apply -auto-approve
