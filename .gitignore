@@ -1,0 +1,12 @@
+# Never commit these
+*.tfstate
+*.tfstate.backup
+.terraform/
+secrets/approle.env
+**/*.key
+**/*.pem
+*.env
+
+# Keep these
+!.gitkeep
+actions-runner/

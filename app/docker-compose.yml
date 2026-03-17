@@ -1,0 +1,24 @@
+services:
+  app:
+    image: prodstack-app:3.0.0
+    networks:
+      - prodstack-private
+    environment:
+      - APP_VERSION=3.0.0
+      - VAULT_ADDR=http://172.25.112.1:8200
+      - VAULT_ROLE_ID=c8cecab5-1656-fd89-925a-5ca5a5d142ab
+      - VAULT_SECRET_ID=2eb7c675-01c2-034b-5609-54af47295879
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    deploy:
+      replicas: 3
+
+networks:
+  prodstack-private:
+    external: true
