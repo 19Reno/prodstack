@@ -22,10 +22,7 @@ pipeline {
         stage('SonarQube Scan') {
             steps {
                 sh '''
-                    docker run --rm \
-                      --network host \
-                      -v $(pwd):/usr/src \
-                      sonarsource/sonar-scanner-cli \
+                    sonar-scanner \
                       -Dsonar.projectKey=Prodstack \
                       -Dsonar.sources=app \
                       -Dsonar.host.url=${SONAR_URL} \
