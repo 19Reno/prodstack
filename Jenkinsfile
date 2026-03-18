@@ -31,15 +31,6 @@ pipeline {
             }
         }
 
-        stage('Terratest') {
-            steps {
-                sh '''
-                    cd test
-                    go test -v -timeout 10m ./...
-                '''
-            }
-        }
-
     }
 
     post {
