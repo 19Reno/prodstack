@@ -13,6 +13,7 @@ pipeline {
                 sh '''
                     cd app
                     pip3 install -r requirements.txt --break-system-packages
+                    python3 -m pip install pytest pytest-cov --break-system-packages
                     python3 -m pytest -v
                 '''
             }
