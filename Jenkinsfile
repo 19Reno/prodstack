@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         SONAR_TOKEN = credentials('sonar-token')
-        SONAR_URL   = "http://localhost:9000"
+        SONAR_URL   = "http://172.25.124.56:9000"
     }
 
     stages {
@@ -31,15 +31,6 @@ pipeline {
             }
         }
 
-        stage('Terraform Init') {
-            steps {
-                sh '''
-                    cd terraform
-                    terraform init
-                '''
-            }
-        }
-
         stage('Terratest') {
             steps {
                 sh '''
@@ -52,11 +43,7 @@ pipeline {
     }
 
     post {
-        success {
-            echo "Pipeline passed"
-        }
-        failure {
-            echo "Pipeline failed"
-        }
+        success { echo "Pipeline passed" }
+        failure { echo "Pipeline failed" }
     }
 }
