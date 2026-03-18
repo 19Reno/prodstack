@@ -7,10 +7,14 @@ def client():
     with app.test_client() as c:
         yield c
 
-def test_home(client):
+def test_index(client):
     r = client.get('/')
     assert r.status_code == 200
 
-def test_hello(client):
-    r = client.get('/hello')
+def test_health(client):
+    r = client.get('/health')
+    assert r.status_code == 200
+
+def test_data(client):
+    r = client.get('/data')
     assert r.status_code == 200
