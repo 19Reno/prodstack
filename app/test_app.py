@@ -18,3 +18,7 @@ def test_health(client):
 def test_data(client):
     r = client.get('/data')
     assert r.status_code == 200
+
+def test_status(client):
+    r = client.get('/status')
+    assert r.status_code == 200
