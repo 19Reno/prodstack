@@ -1,0 +1,142 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0b0d12;
+  color: #dde2f0;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #11141c;
+  border-bottom: 1px solid #1e2330;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #34a853;
+}
+
+nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+nav ul a {
+  color: #6a7090;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+nav ul a:hover { color: #dde2f0; }
+
+section {
+  padding: 80px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 60px;
+  max-width: 100%;
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -2px;
+}
+
+.hero h1 span { color: #34a853; }
+
+.hero p {
+  font-size: 20px;
+  color: #6a7090;
+  margin-bottom: 32px;
+}
+
+.btn {
+  background: #34a853;
+  color: white;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.btn:hover { background: #2d9447; }
+
+h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #dde2f0;
+}
+
+p { color: #6a7090; font-size: 16px; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.skill {
+  background: #11141c;
+  border: 1px solid #1e2330;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #34a853;
+  transition: border-color 0.2s;
+}
+
+.skill:hover { border-color: #34a853; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 500px;
+}
+
+input, textarea {
+  background: #11141c;
+  border: 1px solid #1e2330;
+  border-radius: 8px;
+  padding: 14px;
+  color: #dde2f0;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus { border-color: #34a853; }
+
+footer {
+  text-align: center;
+  padding: 24px;
+  background: #11141c;
+  border-top: 1px solid #1e2330;
+  font-size: 12px;
+  color: #4a5070;
+}
